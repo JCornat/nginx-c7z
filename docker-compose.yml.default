@@ -1,6 +1,7 @@
 version: "2"
 services:
     server:
+        restart:
         build: .
         external_links:
             - ":"
