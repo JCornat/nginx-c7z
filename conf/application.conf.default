@@ -26,6 +26,8 @@ server {
     ssl_stapling on;
     ssl_stapling_verify on;
 
+    client_max_body_size = 100M;
+
     location / {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header Host $http_host;
