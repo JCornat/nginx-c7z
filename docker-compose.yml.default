@@ -1,16 +1,17 @@
-version: "2"
+version: '3'
 services:
     server:
         restart:
         build: .
         external_links:
-            - ":"
+            - ':'
         ports:
-            - "80:80"
-            - "443:443"
+            - '80:80'
+            - '443:443'
         volumes:
-            - "./conf:/etc/nginx/conf.d/"
-            - "./ssl:/etc/nginx/ssl/"
+            - './conf:/etc/nginx/conf.d/'
+            - './conf:/etc/nginx/conf.d/'
+            - './ssl:/etc/nginx/ssl/'
 networks:
     default:
         external:
