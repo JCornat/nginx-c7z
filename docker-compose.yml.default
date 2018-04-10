@@ -1,8 +1,8 @@
 version: '3'
 services:
     server:
-        restart:
         image: nginx:
+        restart:
         external_links:
             - ':'
         ports:
