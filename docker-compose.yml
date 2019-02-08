@@ -1,7 +1,8 @@
 version: '3'
 services:
-    server:
-        image: ${WEB_IMAGE}
+    nginx:
+        image: ${NGINX_IMAGE}
+        container_name: ${NGINX_CONTAINER_NAME}
         ports:
             - '80:80'
             - '443:443'
