@@ -1,8 +1,13 @@
+# IDE
 .idea
+
+# Configuration file
 .env
 
+# Proxy pass configurations
 conf.d/*
-!conf.d/*.default
+!conf.d/.gitkeep
 
+# SSL files
 ssl/*
 !ssl/.gitkeep
