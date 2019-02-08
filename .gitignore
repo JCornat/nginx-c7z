@@ -1,9 +1,8 @@
-docker-compose.yml
+.idea
+.env
 
-conf/*
-!conf/*.default
+conf.d/*
+!conf.d/*.default
 
 ssl/*
 !ssl/.gitkeep
-
-.idea
