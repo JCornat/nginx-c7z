@@ -70,7 +70,7 @@ server {
     listen 80;
     listen [::]:80;
 
-    server_name sub.domaine.com; # Replace with your domain
+    server_name sub.domain.com; # Replace with your domain
 
     return 301 https://$server_name$request_uri;
 }
@@ -79,7 +79,7 @@ server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
 
-    server_name sub.domaine.com;
+    server_name sub.domain.com; # Replace with your domain
 
     ssl on;
     ssl_certificate ssl/cert.pem;
@@ -101,11 +101,19 @@ server {
     client_max_body_size 10M; # Set max upload size
 
     location / {
+        resolver 127.0.0.11;
+        set $container container:3000; # Replace "container:3000" with your container name and port
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header Host $http_host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_pass http://container:3000; # Replace with a container name and correct port
+        proxy_pass http://$container;
+    }
+
+    error_page 502 /502.html;
+    location = /502.html {
+        root /etc/nginx/html;
+        internal;
     }
 }
 ```

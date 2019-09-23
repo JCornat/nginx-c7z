@@ -12,6 +12,7 @@ services:
             - './conf.d:/etc/nginx/conf.d/'
             - './nginx.conf:/etc/nginx/nginx.conf'
             - './ssl:/etc/nginx/ssl/'
+            - './html:/etc/nginx/html/'
         environment:
             - TZ=Europe/Paris
 networks:
