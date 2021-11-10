@@ -11,3 +11,7 @@ conf.d/*
 # SSL files
 ssl/*
 !ssl/.gitkeep
+
+# Certbot config
+certbot-fake.sh
+certbot-init.sh
